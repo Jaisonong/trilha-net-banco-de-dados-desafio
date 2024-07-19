@@ -74,21 +74,24 @@ WHERE Nome LIKE '%Futuro%';
 
 ## 4 - Buscar os filmes lançados em 1997
 **R:**  
-SELECT Nome, Ano, Duracao FROM Filmes  
+SELECT Nome, Ano, Duracao  
+FROM Filmes  
 WHERE Ano = 1997;
 
 ![Exercicio 4](Imagens/4.png)
 
 ## 5 - Buscar os filmes lançados APÓS o ano 2000
 **R:**  
-SELECT Nome, Ano, Duracao FROM Filmes  
+SELECT Nome, Ano, Duracao  
+FROM Filmes  
 WHERE Ano > 2000;
 
 ![Exercicio 5](Imagens/5.png)
 
 ## 6 - Buscar os filmes com a duracao maior que 100 e menor que 150, ordenando pela duracao em ordem crescente
 **R:**  
-SELECT Nome, Ano, Duracao FROM Filmes  
+SELECT Nome, Ano, Duracao  
+FROM Filmes  
 WHERE Duracao > 100 and Duracao < 150  
 ORDER BY Duracao;
 
@@ -96,7 +99,8 @@ ORDER BY Duracao;
 
 ## 7 - Buscar a quantidade de filmes lançadas no ano, agrupando por ano, ordenando pela duracao em ordem decrescente
 **R:**  
-SELECT Ano, COUNT(*) AS Quantidade, SUM (Duracao) AS Duracao FROM Filmes  
+SELECT Ano, COUNT(*) AS Quantidade, SUM (Duracao) AS Duracao  
+FROM Filmes  
 GROUP BY Ano  
 ORDER BY Duracao DESC;
 
@@ -104,14 +108,16 @@ ORDER BY Duracao DESC;
 
 ## 8 - Buscar os Atores do gênero masculino, retornando o PrimeiroNome, UltimoNome
 **R:**  
-SELECT PrimeiroNome, UltimoNome, Genero FROM Atores  
+SELECT PrimeiroNome, UltimoNome, Genero  
+FROM Atores  
 WHERE Genero = 'M';
 
 ![Exercicio 8](Imagens/8.png)
 
 ## 9 - Buscar os Atores do gênero feminino, retornando o PrimeiroNome, UltimoNome, e ordenando pelo PrimeiroNome
 **R:**  
-SELECT PrimeiroNome, UltimoNome, Genero FROM Atores  
+SELECT PrimeiroNome, UltimoNome, Genero  
+FROM Atores  
 WHERE Genero = 'F'  
 ORDER BY PrimeiroNome;
 
@@ -119,7 +125,8 @@ ORDER BY PrimeiroNome;
 
 ## 10 - Buscar o nome do filme e o gênero
 **R:**  
-SELECT f.Nome, g.Genero FROM FilmesGenero fg  
+SELECT f.Nome, g.Genero  
+FROM FilmesGenero fg  
 JOIN Generos g ON fg.IdGenero = g.Id  
 JOIN Filmes f ON fg.IdFilme = f.Id;
 
@@ -127,7 +134,8 @@ JOIN Filmes f ON fg.IdFilme = f.Id;
 
 ## 11 - Buscar o nome do filme e o gênero do tipo "Mistério"
 **R:**  
-SELECT f.Nome, g.Genero FROM FilmesGenero fg  
+SELECT f.Nome, g.Genero  
+FROM FilmesGenero fg  
 JOIN Generos g ON fg.IdGenero = g.Id  
 JOIN Filmes f ON fg.IdFilme = f.Id  
 WHERE g.Genero LIKE '%Mistério%';
